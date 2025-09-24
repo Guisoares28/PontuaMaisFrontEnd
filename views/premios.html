@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kit Escolar Dispharma Prêmios</title>
+    <link rel="stylesheet" href="../style/premios-style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section>
+      <h1 id="titulo">Pontuação</h1>
+      <form id="formPontos">
+        <input
+          id="cpf"
+          type="text"
+          placeholder="Digite o CPF"
+          class="inputForm"
+          required
+        />
+        <input
+          id="pontos"
+          type="text"
+          placeholder="Digite a quantidade de pontos"
+          class="inputForm"
+        />
+        <button class="btn-rainbow" type="submit" id="adicionarPontos">
+          Adicionar Pontos
+        </button>
+      </form>
+    </section>
+    <div id="grid-premios">
+      <div class="card-premio">
+        <img src="" alt="" class="card-image" />
+        <p class="card-titulo"></p>
+        <p class="card-preco"></p>
+        <button id="premio" class="card-button"></button>
+      </div>
+    </div>
+    <script src="../scripts/premios.js"></script>
+    <script src="../scripts/aumentarPontos.js"></script>
+  </body>
+</html>

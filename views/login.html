@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style/login-style.css" />
+    <title>Login Funcionário</title>
+  </head>
+  <body>
+    <div class="login-container">
+      <h1>Login Funcionário</h1>
+      <form id="loginForm">
+        <input type="text" id="username" placeholder="Usuário" required />
+        <input type="password" id="password" placeholder="Senha" required />
+        <button type="submit">Entrar</button>
+        <p id="error_msg" hidden></p>
+      </form>
+    </div>
+
+    <script>
+      document
+        .getElementById("loginForm")
+        .addEventListener("submit", async (e) => {
+          e.preventDefault();
+
+          const username = document.getElementById("username").value;
+          const password = document.getElementById("password").value;
+          const errorMsg = document.getElementById("error_msg");
+
+          try {
+            const response = await fetch("http://localhost:3000/login/", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({ username, password }),
+            });
+
+            const data = await response.json();
+
+            if (!response.ok) {
+              errorMsg.hidden = false;
+              errorMsg.textContent = data.erro || "Erro no login";
+              return;
+            }
+
+            // Salva o token no localStorage
+            localStorage.setItem("token", data.message);
+
+            // Redireciona para a página protegida
+            window.location.href = "cadastro-cliente.html"; // altere para sua página
+          } catch (err) {
+            console.error(err);
+            errorMsg.hidden = false;
+            errorMsg.textContent = "Erro ao conectar com o servidor";
+          }
+        });
+    </script>
+  </body>
+</html>
