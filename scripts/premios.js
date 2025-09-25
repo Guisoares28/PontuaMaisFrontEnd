@@ -77,7 +77,6 @@ function criarCardPremio(premio){
     button.addEventListener('click', function() {
         resgatarPremio(premio.id);
     });
-
     return card;
 }
 
@@ -86,6 +85,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     try{
         const premios = await buscarPremios();
         const grid = document.getElementById("grid-premios");
+
         grid.innerHTML = "";
 
         premios.forEach(premio => {

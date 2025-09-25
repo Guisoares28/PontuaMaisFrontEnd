@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
         event.preventDefault();
 
         const cpf = document.getElementById("inputCPF").value;
+        console.log(cpf);
         const mensagem_erro = document.getElementById("erro_alert");
         const nome = document.getElementById("textNome");
         const pontos = document.getElementById("textPontos");
@@ -16,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             button.textContent = "Consultando...";
 
-            const response = await fetch("https://pontuamais.onrender.com/cliente/dados", {
+            const response = await fetch("hhttps://pontuamais.onrender.com/cliente/dados", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",                    
