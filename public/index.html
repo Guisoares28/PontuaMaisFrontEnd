@@ -3,14 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../style/style.css" />
+    <link rel="stylesheet" href="./index.css" />
     <title>Kit Escolar dispharma</title>
   </head>
   <body>
     <div class="div-principal-titulo-logo">
       <section class="titulo">
-        <h1>Programa de pontos</h1>
-        <h2>Kit Escolar Dispharma</h2>
       </section>
     </div>
     <section class="section-cards">
@@ -25,13 +23,17 @@
             required
             placeholder="Digite seu CPF"
           />
-          <button id="enviar" type="submit">Consultar</button>
+          <button class="button-style" id="enviar" type="submit">
+            Consultar
+          </button>
         </form>
-        <div id="divPontoNome" hidden="true">
-          <p id="textNome" hidden="true"></p>
-          <p id="textPontos" hidden="true"></p>
+        <p id="link-premios" hidden><a href="./premios.html">Consultar Prêmios</a></p>
+        <div id="divPontoNome" hidden>
+          <div class="div-results">
+            <p id="textNome" hidden="true"></p>
+            <p id="textPontos" hidden="true"></p>
+          </div>
         </div>
-      </div>
     </section>
     <script src="../scripts/requests.js"></script>
   </body>

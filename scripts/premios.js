@@ -1,6 +1,6 @@
 async function buscarPremios(){
     try{
-        const response = await fetch("http://localhost:3000/premio/todos", {
+        const response = await fetch("https://pontuamais.onrender.com/premio/todos", {
         method: "GET",
         headers: {"Content-Type": "application/json",
             }

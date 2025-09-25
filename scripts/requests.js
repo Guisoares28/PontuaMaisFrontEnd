@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const nome = document.getElementById("textNome");
         const pontos = document.getElementById("textPontos");
         const cardCliente = document.getElementById("divPontoNome");
+        const pesquisarPremios = document.getElementById('link-premios');
         
         mensagem_erro.hidden = true;
 
@@ -32,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 mensagem_erro.textContent = data.erro;
             }
 
-            
+            pesquisarPremios.hidden= false;
             cardCliente.hidden = false;
             nome.hidden = false;
             pontos.hidden = false;
