@@ -7,13 +7,13 @@ document.getElementById("formPontos").addEventListener('submit', async (e) => {
     if (!cpf) return alert("É necessário informar o CPF do cliente para adicionar pontos");
 
     try {
-        const res = await fetch("http://localhost:3000/funcionario/pontos/adicionar", {
+        const res = await fetch("https://pontuamais.onrender.com/funcionario/pontos/adicionar", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
                 "Authorization": `Bearer ${localStorage.getItem('token')}`
             },
-            body: JSON.stringify({ pontos, clienteCpf: cpf })
+            body: JSON.stringify({ pontos: pontos, clienteCpf: cpf })
         });
 
         const data = await res.json();

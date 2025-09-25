@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
         error_mensagem.hidden = true;
 
         try{
-            const response = await fetch('http://localhost:3000/cliente/cadastro', {
+            const response = await fetch('https://pontuamais.onrender.com/cliente/cadastro', {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

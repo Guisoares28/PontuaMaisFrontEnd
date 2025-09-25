@@ -31,7 +31,7 @@ async function resgatarPremio(premioId){
     }
 
     try{
-        const response = await fetch("http://localhost:3000/premio/pegar/premio", {
+        const response = await fetch("https://pontuamais.onrender.com/premio/pegar/premio", {
         method: "POST",
         headers:{
             "Content-Type": "application/json",
