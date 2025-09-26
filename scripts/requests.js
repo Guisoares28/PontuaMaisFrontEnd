@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             button.textContent = "Consultando...";
 
-            const response = await fetch("hhttps://pontuamais.onrender.com/cliente/dados", {
+            const response = await fetch("https://pontuamais.onrender.com/cliente/dados", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",                    
