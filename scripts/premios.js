@@ -55,7 +55,7 @@ async function resgatarPremio(premioId){
                 alert(`${data.erro} Você será redirecionado para a tela de login`);
                 return setTimeout(() => window.location.href = "login.html", 1000);
             }
-            return alert(`Ocorreu um erro: ${data.erro}`);
+            return alert(`${data.erro}`);
         }
 
     }catch(erro){
