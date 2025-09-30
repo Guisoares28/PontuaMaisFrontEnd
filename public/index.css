@@ -62,6 +62,7 @@ p, h2, h3, input, button {
 }
 
 .section-cards div {
+    min-height: 150px;
     flex: 1; 
     border-radius: 30px;
     /* Ajuste para centralizar apenas a div-consulta, se for a única */
