@@ -62,7 +62,6 @@ p, h2, h3, input, button {
 }
 
 .section-cards div {
-    min-height: 350px;
     flex: 1; 
     border-radius: 30px;
     /* Ajuste para centralizar apenas a div-consulta, se for a única */
@@ -217,7 +216,7 @@ p, h2, h3, input, button {
 }
 
 .div-results{
-    max-height: 60px;
+    max-height: auto; /* Permite que o conteúdo defina a altura */
     width: 100%;
 }
 
