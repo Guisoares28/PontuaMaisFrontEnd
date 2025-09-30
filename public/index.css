@@ -203,12 +203,17 @@ p, h2, h3, input, button {
     /* Caixa de resultado como uma nuvem ou balão */
     background: #F0F8FF; /* Azul Bebê */
     border-radius: 20px;
-    padding: 30px;
+    
+    /* AQUI ESTÁ O AJUSTE PRINCIPAL */
+    /* Reduz o padding vertical (15px no topo/base) e mantém o horizontal (30px) */
+    padding: 15px 30px; 
+    
     margin: 30px 0;
     text-align: center;
     box-shadow: 0 6px 15px rgba(70, 130, 180, 0.3);
-    border: 4px dashed #4682B4; /* Borda tracejada de nuvem */
+    border: 4px dashed #4682B4; 
     width: 90%;
+    /* Removendo a propriedade 'min-height' que poderia estar forçando o tamanho */
 }
 
 .div-results{
