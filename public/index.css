@@ -1,308 +1,265 @@
-body, html{
+/*
+===================================
+DESIGN INFANTIL: Tema: Parque de Diversões
+===================================
+*/
+
+/* --- Configurações Básicas --- */
+body, html {
     padding: 0;
     margin: 0;
     border: 0;
-    height: 100%; /* ← ADICIONE ISSO */
-    min-height: 100vh; /* ← E ISSO */
-    background-image: url("../imagens/papelParedeMaterial.jpg");
-    background-repeat: no-repeat;    /* não repete a imagem */
-    background-size: cover;          /* ocupa todo o espaço da tela */
-    background-position: center; 
+    height: 100%;
+    min-height: 100vh;
+    font-family: 'Chewy', cursive; /* Fonte principal infantil */
     
+    /* Fundo de Céu Azul/Brinquedo - Substitui a imagem de fundo */
+    background-color: #87CEEB; /* Azul Céu Vibrante */
+    background-image: 
+        radial-gradient(circle at 10% 90%, rgba(255, 255, 255, 0.7) 3%, transparent 15%),
+        radial-gradient(circle at 90% 40%, rgba(255, 255, 255, 0.6) 8%, transparent 25%);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center; 
 }
 
-.imagem_logo img{
-    height: 200px;
+/* Garante que o texto seja legível */
+p, h2, h3, input, button {
+    font-family: 'Chewy', cursive;
 }
 
-.div-principal-titulo-logo{
+/* --- Título e Logo (Área Superior) --- */
+.div-principal-titulo-logo {
     display: flex;
     justify-content: center;
+    padding-top: 30px;
+    /* Adiciona espaço para um título grande, se for injetado aqui */
 }
 
-.titulo{
+.titulo {
     padding-top: 30px;
     font-size: 40px;
 }
 
-.titulo h1, h2{
+.titulo h1, .titulo h2 {
+    /* Estas classes dependem da sua lógica JS injetar o H1/H2 */
     margin: 0;
-    color: #293189;
-    background-color: #e3e4e8c0;
+    color: #FF69B4; /* Rosa Choque */
+    background-color: #FFFFE0; /* Amarelo Clarissimo */
     border-radius: 20px;
     font-weight: bold;
+    /* Estilo de texto do Título */
+    text-shadow: 2px 2px 0 #fff, 4px 4px 0 #FFD700;
 }
 
-.section-cards{
+/* --- Layout da Seção Principal --- */
+.section-cards {
     display: flex;
-    margin-top: 10px;
-    gap: 3px;
-    padding: 5px;
+    justify-content: center; /* Centraliza a div-consulta se as outras estiverem ausentes */
+    margin-top: 20px;
+    gap: 20px;
+    padding: 20px;
 }
 
-.section-cards div{
-    min-height: 300px;
-    flex: 1; /* Cada div ocupa igual espaço */
+.section-cards div {
+    min-height: 350px;
+    flex: 1; 
     border-radius: 30px;
+    /* Ajuste para centralizar apenas a div-consulta, se for a única */
+    max-width: 450px; 
 }
 
-.div-ranking{
+/* Estilos de fundo para divs que podem existir (ranking, transacao) */
+.div-ranking, .div-transacao {
     display: flex;
     justify-content: center;
-    background-color: #e3e4e8c0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.9); /* Fundo branco com leve transparência */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+    border: 5px dashed #4682B4; /* Borda tracejada azul */
 }
 
-.div-consulta{
+/* --- 2. DIV DE CONSULTA (O Foco Principal) --- */
+.div-consulta {
     display: flex;
     align-items: center;
     flex-direction: column;
-    background-color: #e3e4e8c0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    height: auto;
-}
-
-.div-transacao{
-    display: flex;
-    justify-content: center;
-    background-color: #e3e4e8c0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.div-consulta {
-    background: linear-gradient(145deg, #ffffff, #f8f9fa);
-    border-radius: 20px;
+    
+    /* Fundo de Lousa Divertida (igual ao da tela de prêmios) */
+    background-color: #90EE90; /* Verde Claro */
+    background-image: repeating-linear-gradient(
+        -45deg,
+        rgba(255,255,255,0.15) 0px,
+        rgba(255,255,255,0.15) 1px,
+        transparent 1px,
+        transparent 10px
+    );
+    
+    border-radius: 25px;
     padding: 40px 30px;
-    padding-bottom: 5px;
-    box-shadow: 
-        0 10px 30px rgba(41, 49, 137, 0.15),
-        inset 0 1px 0 rgba(255, 255, 255, 0.8);
-    border: 1px solid rgba(41, 49, 137, 0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    border: 6px solid #FFD700; /* Borda Grossa Amarela */
     text-align: center;
-    position: relative;
-    overflow: hidden;
     max-width: 450px;
-    margin: 0 auto;
-    display: flex;
-}
-
-.div-consulta::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, #4a6ee0, #6a11cb);
+    width: 100%;
 }
 
 .div-consulta h2 {
-    font-size: 32px;
-    color: #2c3e50;
-    margin-bottom: 15px;
-    font-weight: 700;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    font-size: 3rem !important; /* Mais destaque */
+    color: #FF69B4; /* Rosa Choque */
+    height: auto !important; /* Permite que o texto se ajuste */
+    margin-bottom: 25px;
+    text-shadow: 2px 2px 0 #fff, 4px 4px 0 #FFA07A; /* Sombra Laranja/Pêssego */
+    padding: 5px 10px;
 }
 
 .div-consulta h3 {
-    font-size: 22px;
-    color: #4a6ee0;
-    margin-bottom: 30px;
-    font-weight: 600;
+    font-size: 1.8rem !important;
+    color: #4682B4; /* Azul Forte */
+    margin-bottom: 25px;
+    font-weight: 700;
+    text-shadow: 1px 1px 0 #fff;
 }
 
+/* --- Formulário e Inputs --- */
 #formConsulta {
     display: flex;
     flex-direction: column;
     gap: 20px;
     align-items: center;
+    width: 100%;
 }
 
 #inputCPF {
     width: 100%;
-    padding: 16px 20px;
-    border: 2px solid #e0e3e9;
-    border-radius: 12px;
-    font-size: 16px;
-    transition: all 0.3s ease;
-    background: #f8f9fb;
-    font-weight: 500;
+    padding: 15px 20px;
+    border: 4px solid #4682B4; /* Borda Azul Forte */
+    border-radius: 15px;
+    font-family: 'Baloo 2', sans-serif; /* Fonte mais legível para input */
+    font-size: 1.1rem;
+    transition: all 0.2s ease;
+    background: #F0F8FF; /* Azul Bebê no fundo */
+    color: #4682B4;
+    font-weight: 700;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 #inputCPF:focus {
     outline: none;
-    border-color: #4a6ee0;
+    border-color: #FF69B4; /* Rosa no foco */
     background: white;
-    box-shadow: 0 0 0 3px rgba(74, 110, 224, 0.1);
-    transform: translateY(-1px);
+    box-shadow: 0 0 0 4px rgba(255, 105, 180, 0.3);
 }
 
 #inputCPF::placeholder {
-    color: #a0a4ab;
+    color: rgba(70, 130, 180, 0.7);
 }
 
+/* --- Botão de Consultar (Enviar) --- */
 .button-style {
-    background: linear-gradient(135deg, #4a6ee0, #6a11cb);
-    color: white;
-    border: none;
-    padding: 16px 30px;
-    border-radius: 12px;
-    font-size: 18px;
-    font-weight: 600;
+    /* Mantém a classe button-style para a lógica JS */
+    /* Estilo de botão 3D de doce */
+    background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); /* Ouro para Laranja */
+    color: #8B4513; /* Marrom Forte */
+    border: 4px solid #8B4513; 
+    padding: 15px 35px;
+    border-radius: 50px; /* Bem redondo */
+    font-size: 1.5rem;
+    font-weight: 700;
     cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(74, 110, 224, 0.3);
+    box-shadow: 0 6px 0 #DAA520; /* Efeito 3D (sombra amarela escura) */
+    transition: all 0.1s ease;
     position: relative;
     overflow: hidden;
+    height: 60px;
 }
 
-
-
-#enviar:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 7px 20px rgba(74, 110, 224, 0.4);
+.button-style:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 7px 0 #DAA520;
 }
 
-#enviar:active {
-    transform: translateY(0);
+.button-style:active {
+    transform: translateY(4px); /* Pressiona o botão */
+    box-shadow: 0 2px 0 #DAA520;
 }
 
-#enviar::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-    transition: left 0.5s;
-}
-
-#enviar:hover::after {
-    left: 100%;
-}
-
+/* --- Alerta de Erro --- */
 #erro_alert {
-    background: #ffeaea;
-    color: #d63031;
+    background: #FFCCCC; /* Rosa Claro de Erro */
+    color: #D63031;
     padding: 12px 15px;
-    border-radius: 8px;
-    font-weight: 500;
-    border-left: 4px solid #d63031;
-    margin-bottom: 10px;
+    border-radius: 10px;
+    font-weight: 700;
+    border: 3px solid #D63031;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    text-shadow: 1px 1px 0 #fff;
+    width: 100%;
+    text-align: center;
 }
 
+/* --- Div de Resultados (divPontoNome) --- */
 #divPontoNome {
-    min-height: 30px;
-    max-height: 100px;
-    margin-top: 25px;
-    background: linear-gradient(135deg, #f8f9fb, #eef2f7);
-    border-radius: 15px;
-    padding: 25px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    border: 1px solid rgba(74, 110, 224, 0.1);
-    animation: fadeInUp 0.5s ease;
-    flex-direction: column;
-    align-items: center;
-    gap: 5px;
-    width: 340px;
-    background: #fff;
+    /* Caixa de resultado como uma nuvem ou balão */
+    background: #F0F8FF; /* Azul Bebê */
     border-radius: 20px;
     padding: 30px;
-    margin: 20px 0;
+    margin: 30px 0;
     text-align: center;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-#link-premios{
-    font-size: 30px;
-}
-
-#link-premios a{
-    text-decoration: none;
-    font-weight: bold;
-}
-
-#link-premios a:hover{
-    color: gold;
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(15px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-#textNome {
-    font-size: 20px;
-    font-weight: 600;
-    color: #2c3e50;
-    margin-bottom: 8px;
-}
-
-#textPontos {
-    font-size: 26px;
-    font-weight: 700;
-    color: #27ae60;
-    background: rgba(39, 174, 96, 0.1);
-    padding: 10px 20px;
-    border-radius: 10px;
-    display: inline-block;
-}
-
-/* Efeito de brilho sutil */
-.div-consulta::after {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(255,255,255,0.1) 1%, transparent 1%);
-    background-size: 10px 10px;
-    opacity: 0.3;
-    pointer-events: none;
-}
-
-
-#divPontoNome::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, #667eea, #764ba2);
-}
-
-#textNome::before {
-    content: '👤 ';
-}
-
-#textPontos::before {
-    content: '⭐ ';
-}
-
-#textNome {
-    font-size: 18px;
-    margin: 0 0 15px 0;
-    color: #5a6c7d;
-}
-
-#textPontos {
-    font-size: 28px;
-    font-weight: 700;
-    margin: 0;
-    color: #e74c3c;
+    box-shadow: 0 6px 15px rgba(70, 130, 180, 0.3);
+    border: 4px dashed #4682B4; /* Borda tracejada de nuvem */
+    width: 90%;
 }
 
 .div-results{
     height: auto;
+    width: 100%;
+}
+
+#textNome {
+    font-size: 1.4rem;
+    margin: 0 0 10px 0;
+    color: #4682B4;
+    font-weight: 700;
+    text-shadow: 1px 1px 0 #fff;
+}
+
+#textPontos {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0;
+    color: #3CB371; /* Verde Floresta */
+    text-shadow: 2px 2px 0 #fff, 3px 3px 0 #FFD700; /* Estilo de moeda */
+    background: rgba(255, 255, 0, 0.1); /* Fundo suave para destaque */
+    padding: 5px 10px;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+#textNome::before {
+    content: '👦 '; /* Emoji infantil */
+}
+
+#textPontos::before {
+    content: '⭐ '; /* Emoji Estrela */
+}
+
+/* --- Link de Prêmios --- */
+#link-premios {
+    font-size: 1.5rem;
+    margin-top: 15px;
+}
+
+#link-premios a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #FF69B4; /* Rosa para o link */
+    text-shadow: 1px 1px 0 #fff;
+    border-bottom: 3px solid #FF69B4;
+    padding-bottom: 2px;
+    transition: color 0.2s;
+}
+
+#link-premios a:hover {
+    color: #D63031; /* Vermelho ao passar o mouse */
 }

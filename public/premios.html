@@ -6,40 +6,49 @@
     <title>Kit Escolar Dispharma Prêmios</title>
     <link rel="stylesheet" href="./premios-style.css" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Chewy&family=Baloo+2:wght@400;700&display=swap"
       rel="stylesheet"
     />
   </head>
   <body>
     <section>
-      <h1 id="titulo">Pontuação</h1>
+      <h1 id="titulo">🎉 Cantinho dos Prêmios! 🏆</h1>
+
       <form id="formPontos">
         <input
           id="cpf"
           type="text"
-          placeholder="Digite o CPF"
+          placeholder="🎈 Digite o CPF (do papai/mamãe)"
           class="inputForm"
           required
         />
         <input
           id="pontos"
           type="text"
-          placeholder="Digite o valor gasto pelo cliente"
+          placeholder="💰 Valor gasto (para ganhar estrelinhas)"
           class="inputForm"
         />
         <button class="btn-rainbow" type="submit" id="adicionarPontos">
-          Adicionar Pontos
+          ✨ Adicionar Estrelinhas!
         </button>
       </form>
     </section>
+
     <div id="grid-premios">
       <div class="card-premio">
-        <img src="" alt="" class="card-image" />
-        <p class="card-titulo"></p>
-        <p class="card-preco"></p>
-        <button id="premio" class="card-button"></button>
+        <img src="" alt="Imagem do Prêmio" class="card-image" />
+        <p class="card-titulo">Prêmio Incrível!</p>
+        <p class="card-preco">100</p>
+        <button id="premio" class="card-button">Trocar Estrelinhas</button>
+      </div>
+      <div class="card-premio">
+        <img src="" alt="Imagem do Prêmio" class="card-image" />
+        <p class="card-titulo">Caixa de Lápis de Cor Gigante</p>
+        <p class="card-preco">250</p>
+        <button id="premio" class="card-button">Trocar Estrelinhas</button>
       </div>
     </div>
+
     <script src="../scripts/premios.js"></script>
     <script src="../scripts/aumentarPontos.js"></script>
   </body>

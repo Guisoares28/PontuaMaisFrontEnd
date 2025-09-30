@@ -1,290 +1,279 @@
+/*
+===================================
+DESIGN INFANTIL: Tema: Parque de Diversões/Brinquedos
+===================================
+*/
 
-section{
-    border: solid rgb(185, 173, 173) 1px;
-    border-radius: 10px;
+/* Reset e Configuração Global */
+* {
+    box-sizing: border-box;
+    font-family: 'Chewy', cursive; /* Fonte principal infantil */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    /* Fundo de céu com nuvens */
+    background-color: #87CEEB; /* Azul Céu */
+    background-image: 
+        radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.8) 5%, transparent 20%),
+        radial-gradient(circle at 80% 50%, rgba(255, 255, 255, 0.8) 10%, transparent 30%),
+        radial-gradient(circle at 45% 20%, rgba(255, 255, 255, 0.8) 8%, transparent 25%);
+    background-attachment: fixed; /* Fixa o fundo para o scroll */
+}
+
+/*
+===================================
+1. SEÇÃO DE PONTUAÇÃO (Área Principal)
+===================================
+*/
+section {
+    /* Manter a lógica de layout original */
+    border: solid 5px #FFD700; /* Borda Grossa Amarela Ouro */
+    border-radius: 20px;
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding: 5px;
-    padding-bottom: 10px;
-    background-color: rgba(144, 167, 234, 0.2); /* 50% de transparência */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    padding: 15px 10px;
+    
+    /* Fundo de giz/lousa divertida */
+    background-color: #90EE90; /* Verde Claro */
+    background-image: repeating-linear-gradient(
+        -45deg,
+        rgba(255,255,255,0.1) 0px,
+        rgba(255,255,255,0.1) 1px,
+        transparent 1px,
+        transparent 10px
+    );
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4); /* Sombra mais marcada */
+    margin: 20px auto;
+    max-width: 400px;
 }
 
 #titulo {
-  font-family: 'Baloo 2', cursive; /* fonte divertida */
-  font-size: 2.5rem; /* tamanho grande para destaque */
-  font-weight: bold;
-  text-align: center;
-  color: gold; /* branco, para contrastar com o azul do fundo */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* sombrazinha suave */
-  letter-spacing: 2px; /* mais espaçamento entre letras */
-  margin: 0;
-  padding: 15px 0;
+    font-family: 'Chewy', cursive; 
+    font-size: 3rem; 
+    font-weight: bold;
+    color: #FF69B4; /* Rosa Choque */
+    /* Efeito de balão inflável */
+    text-shadow: 
+        -2px -2px 0 #fff,  
+        2px -2px 0 #fff,
+        -2px 2px 0 #fff,
+        2px 2px 0 #fff,
+        4px 4px 0 #FFD700, /* Sombra Amarela */
+        6px 6px 0 #FFA07A; /* Sombra Laranja Suave */
+    margin: 10px 0 20px 0;
+    padding: 0;
 }
 
-#formPontos{
+#formPontos {
     display: flex;
     flex-direction: column;
-    gap: 5px;
-    margin-bottom: 10px;
+    gap: 15px; /* Aumenta o espaçamento */
+    margin-bottom: 15px;
 }
 
-#titulo{
-    margin-top: 0;
-    margin-bottom: 5px;
-}
-
-.inputForm{
-    border: solid rgb(32, 102, 187) 3px;
-    border-radius: 10px;
-    font-weight: bold;
-    width: 300px;
-    height: 20px;
-    padding: 5px;
-}
-
-#adicionarPontos{
+.inputForm {
+    border: solid 4px #4682B4; /* Borda Azul Forte */
+    border-radius: 12px; /* Borda mais arredondada */
+    font-family: 'Baloo 2', sans-serif; /* Fonte mais legível para input */
+    font-weight: 700;
+    width: 320px; /* Pouco maior */
     height: 40px;
-    border-radius: 10px;
-    font-weight: bold;
-    font-size: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
-    cursor: pointer;
+    padding: 10px 15px;
+    font-size: 1.1rem;
+    color: #4682B4;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
 }
 
-#grid-premios{
+.inputForm::placeholder {
+    color: rgba(70, 130, 180, 0.7);
+}
+
+.inputForm:focus {
+    border-color: #FF69B4; /* Borda muda para rosa ao focar */
+    outline: none;
+}
+
+/* Botão de Adicionar Pontos (Arco-Íris) */
+.btn-rainbow {
+    position: relative;
+    display: inline-block;
+    padding: 10px 30px;
+    font-size: 1.4rem; /* Maior e mais divertido */
+    font-weight: bold;
+    color: white;
+    background: #FF6347; /* Vermelho Tomate */
+    border: none;
+    border-radius: 15px; /* Mais arredondado */
+    cursor: pointer;
+    z-index: 1;
+    overflow: hidden;
+    height: 50px; /* Mais alto */
+    box-shadow: 0 5px 0 #CD5C5C; /* Efeito 3D sutil */
+    transition: all 0.1s ease;
+}
+
+/* Efeito de Pressão 3D */
+.btn-rainbow:active {
+    box-shadow: 0 2px 0 #CD5C5C;
+    transform: translateY(3px);
+}
+
+/* Borda Arco-Íris Animada: Mantida mas mais vibrante */
+.btn-rainbow::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border-radius: 18px;
+    background: linear-gradient(
+        90deg,
+        #FF0000, /* Vermelho */
+        #FF8C00, /* Laranja */
+        #FFFF00, /* Amarelo */
+        #00FF00, /* Verde */
+        #00BFFF, /* Azul Claro */
+        #9400D3, /* Violeta */
+        #FF0000
+    );
+    background-size: 400%;
+    z-index: -1;
+    animation: rainbow 8s linear infinite; /* Animação mais suave */
+}
+
+/* Fundo Sólido */
+.btn-rainbow::after {
+    background: #FF6347; /* Cor interna mais vibrante */
+    border-radius: 13px;
+    /* Manter a lógica original de after */
+}
+
+@keyframes rainbow {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 400% 50%; }
+}
+
+/*
+===================================
+2. GRID DE PRÊMIOS
+===================================
+*/
+#grid-premios {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Card um pouco maior */
+    gap: 30px; /* Maior espaçamento */
+    padding: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .card-premio {
-    background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
-    border-radius: 15px;
+    background: #fff; /* Fundo Branco Limpo */
+    border-radius: 25px; /* Super arredondado */
     padding: 20px;
-    margin: 15px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15); /* Sombra 3D suave */
     transition: all 0.3s ease;
-    border: 1px solid rgba(255,255,255,0.5);
+    border: 5px solid #FFD700; /* Borda Amarela de Presente */
     text-align: center;
-    max-width: 280px;
     position: relative;
     overflow: hidden;
-}
-
-.card-button {
-    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
-    color: white;
-    border: none;
-    padding: 12px 25px;
-    border-radius: 50px;
-    font-size: 1.1em;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    width: 100%;
-    margin-top: 10px;
-    box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
-    position: relative;
-    overflow: hidden;
-}
-
-.card-button::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-    transition: left 0.5s;
-}
-
-.card-button:hover::before {
-    left: 100%;
-}
-
-.card-button:hover {
-    background: linear-gradient(135deg, #2980b9 0%, #3498db 100%);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(52, 152, 219, 0.4);
-}
-
-.card-button:active {
-    transform: translateY(0);
-}
-
-.card-premio::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, #3498db, #2ecc71, #e74c3c, #f39c12);
-    background-size: 400% 400%;
-    animation: gradientShift 3s ease infinite;
-}
-
-@keyframes gradientShift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
 }
 
 .card-premio:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    transform: scale(1.05) rotate(1deg); /* Efeito de balanço no hover */
+    box-shadow: 0 20px 40px rgba(255, 105, 180, 0.4); /* Sombra rosa de destaque */
+}
+
+.card-premio::before {
+    /* Efeito de fita de presente */
+    content: "🎁";
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 2em;
+    z-index: 10;
+    opacity: 0.8;
+    background: none;
+    animation: none; /* Remove a animação original */
 }
 
 .card-image {
-    width: 100%;
+    width: 90%; /* Deixa uma margem interna */
     height: 180px;
-    object-fit: cover;
-    border-radius: 10px;
+    object-fit: contain; /* Para não cortar imagens de prêmios */
+    border-radius: 15px;
     margin-bottom: 15px;
+    border: 3px dashed #FF69B4; /* Borda tracejada rosa */
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-}
-
-.card-premio:hover .card-image {
-    transform: scale(1.03);
+    background-color: #F0F8FF; /* Fundo levemente azul para a imagem */
 }
 
 .card-titulo {
-    margin: 15px 0 10px 0;
-    color: #2c3e50;
-    font-size: 1.4em;
+    margin: 10px 0;
+    color: #4682B4; /* Azul Divertido */
+    font-size: 1.6em; /* Maior */
     font-weight: 700;
-    line-height: 1.3;
-    text-align: center;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
-    padding: 0 10px;
-    min-height: 3.2em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    min-height: 2em; /* Garante que todos os títulos tenham espaço */
+    text-shadow: 1px 1px 0 #fff, 2px 2px 0 #FFD700; /* Efeito 3D no texto */
 }
 
 .card-preco {
-    font-size: 1.8em;
+    font-size: 2.2em; /* Super grande */
     font-weight: 800;
-    color: #e74c3c;
-    text-align: center;
-    margin: 15px 0;
-    padding: 8px 15px;
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-    border-radius: 25px;
+    color: #3CB371; /* Verde Floresta */
+    margin: 10px 0 20px 0;
+    padding: 10px 20px;
+    background: #FFFFE0; /* Amarelo Claro */
+    border-radius: 30px;
+    border: 3px solid #FFD700; /* Borda amarela forte */
     display: inline-block;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    position: relative;
+    box-shadow: 0 4px 0 #DAA520; /* Efeito 3D para o preço */
 }
 
 .card-preco::before {
-    content: "💰";
+    content: "⭐️"; /* Estrelinha no lugar da moeda */
     margin-right: 8px;
-    font-size: 0.9em;
+    font-size: 1em;
 }
 
 .card-preco::after {
-    content: "pontos";
-    display: block;
-    font-size: 0.5em;
+    content: "Estrelinhas"; /* Nome do Ponto */
+    font-size: 0.6em;
     font-weight: 600;
-    color: #7f8c8d;
-    margin-top: -5px;
+    color: #4682B4;
+    margin-top: -10px;
     letter-spacing: 1px;
 }
 
-.btn-rainbow {
-  position: relative;
-  display: inline-block;
-  padding: 10px 30px;
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: white;
-  background: #2196f3; /* fundo fixo azul */
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
-  z-index: 1;
-  overflow: hidden;
+/* Botão de Troca (Card) */
+.card-button {
+    background: linear-gradient(135deg, #FFD700 0%, #FFA07A 100%); /* Amarelo para Laranja */
+    color: #8B4513; /* Marrom de Urso de Pelúcia */
+    border: 4px solid #8B4513; /* Borda grossa */
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 1.2em;
+    font-weight: 700;
+    cursor: pointer;
+    width: 90%;
+    margin-top: 15px;
+    box-shadow: 0 5px 0 #CD853F; /* Efeito 3D */
+    transition: all 0.1s ease;
 }
 
-/* camada da borda animada */
-.btn-rainbow::before {
-  content: "";
-  position: absolute;
-  top: -3px;
-  left: -3px;
-  right: -3px;
-  bottom: -3px;
-  border-radius: 14px;
-  background: linear-gradient(
-    90deg,
-    red,
-    orange,
-    yellow,
-    green,
-    blue,
-    indigo,
-    violet,
-    red
-  );
-  background-size: 400%;
-  z-index: -1;
-  animation: rainbow 6s linear infinite;
+.card-button:hover {
+    background: linear-gradient(135deg, #FFA07A 0%, #FFD700 100%);
+    transform: translateY(0);
+    box-shadow: 0 5px 0 #CD853F;
 }
 
-/* fundo sólido dentro do botão */
-.btn-rainbow::after {
-  content: "";
-  position: absolute;
-  top: 2px;
-  left: 2px;
-  right: 2px;
-  bottom: 2px;
-  border-radius: 10px;
-  background: #2196f3;
-  z-index: -1;
+.card-button:active {
+    transform: translateY(3px);
+    box-shadow: 0 2px 0 #CD853F;
 }
 
-/* animação do arco-íris */
-@keyframes rainbow {
-  0% { background-position: 0% 50%; }
-  100% { background-position: 400% 50%; }
-}
-
-.loader-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-.progress-bar {
-    width: 80%;
-    max-width: 400px;
-    height: 20px;
-    background-color: #e0e0e0;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.progress {
-    width: 0;
-    height: 100%;
-    background-color: #FF5C35;
-    animation: fill 4s infinite;
-}
-
-@keyframes fill {
-    0% {
-        width: 0;
-    }
-    100% {
-        width: 100%;
-    }
-}
