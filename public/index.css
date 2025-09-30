@@ -209,6 +209,7 @@ p, h2, h3, input, button {
     box-shadow: 0 6px 15px rgba(70, 130, 180, 0.3);
     border: 4px dashed #4682B4; /* Borda tracejada de nuvem */
     width: 90%;
+    max-height: 50px;
 }
 
 .div-results{
